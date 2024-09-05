@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingole's Physiotherapy & Rehabilitation Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #f8f9fa;
+        }
+        .bg-primary-custom {
+            background-color: var(--primary-color);
+        }
+        .text-primary-custom {
+            color: var(--primary-color);
+        }
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        .btn-primary-custom:hover {
+            background-color: #000000;
+            border-color: #000000;
+        }
+        .btn-outline-primary-custom {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .btn-outline-primary-custom:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .navbar-custom {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .hero-section {
+            background-color: black;
+            color: white;
+            padding: 4rem 0;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .footer {
+            background-color: var(--secondary-color);
+        }
+        .copyright {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary-custom text-white py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <span class="me-3"><i class="fas fa-phone"></i> 9999912345 / 9999912347</span>
+                    <span><i class="fas fa-envelope"></i> ingolephysiotherapyclinic@gmail.com</span>
+                </div>
+                <div class="col-md-4 text-end">
+                    <span class="me-3">Profile</span>
+                    <span>1, Vijay Nagar, Sane Guruji</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="monke.JPG" alt="Ingole's Logo" width="50" height="50" class="d-inline-block align-top">
+                <span class="ms-2 text-primary-custom fw-bold">Ingole's</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary-custom ms-3">Book Appointment</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h1 class="display-4 fw-bold mb-4">Ingole's Physiotherapy & Rehabilitation Center</h1>
+                    <p class="lead mb-4">Your one-stop solution for health and wellness, guided by expert physiotherapists with state-of-the-art facilities.</p>
+                    <button class="btn btn-primary-custom btn-lg">Read More</button>
+                </div>
+                <div class="col-md-6">
+                    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="download.jpeg" class="d-block w-100 rounded" alt="Slide 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="balaji1.jpeg" class="d-block w-100 rounded" alt="Slide 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="balaji2.jpeg" class="d-block w-100 rounded" alt="Slide 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Ingole's Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="monke.JPG" alt="Team" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="text-primary-custom mb-4">Why Ingole's Physiotherapy Clinic?</h2>
+                    <p class="mb-4">At Ingole's Physiotherapy & Rehabilitation Center in the center of Aurangabad and the beautiful valley of the Deccan, we are dedicated to helping you achieve optimal health, function, and well-being through personalized and comprehensive rehabilitation services.</p>
+                    <p class="mb-4">Our team of highly skilled physiotherapists at Ingole's Physiotherapy & Rehabilitation Center is here to support you. We are dedicated to being your partner in health and wellness, guiding you towards a life of improved mobility, function, and vitality.</p>
+                    <button class="btn btn-outline-primary-custom">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Working Hours and Appointment -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-clock fa-3x text-primary-custom mb-3"></i>
+                            <h3 class="card-title">Working Hours</h3>
+                            <p class="card-text">Mon - Sat: 9:00am - 9:00pm</p>
+                            <p class="card-text">Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-phone fa-3x text-primary-custom mb-3"></i>
+                            <h3 class="card-title">Book An Appointment</h3>
+                            <p class="card-text">Call us today or book online</p>
+                            <p class="card-text">Phone: +91 9999912345</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="py-5 bg-primary-custom text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h3 class="display-4 fw-bold">10+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h3 class="display-4 fw-bold">15+</h3>
+                    <p>Physiotherapist Team</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h3 class="display-4 fw-bold">10,000+</h3>
+                    <p>Patients Treated</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="display-4 fw-bold">9,345+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas of Specialized Therapy -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Areas of Specialized Therapy</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="balaji1.jpeg" class="card-img-top" alt="Neuro Physiotherapy">
+                        <div class="card-body">
+                            <h5 class="card-title">Neuro Physiotherapy</h5>
+                            <p class="card-text">Specialized therapy for neurological conditions, focusing on improving movement, balance, and coordination for patients with neurological disorders or injuries.</p>
+                            <a href="#" class="btn btn-link text-primary-custom">Read More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="balaji2.jpeg" class="card-img-top" alt="Pediatric Physiotherapy">
+                        <div class="card-body">
+                            <h5 class="card-title">Pediatric Physiotherapy</h5>
+                            <p class="card-text">Tailored physiotherapy for children, addressing developmental delays, genetic disorders, and injuries to promote optimal physical function and independence.</p>
+                            <a href="#" class="btn btn-link text-primary-custom">Read More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="monke.JPG" class="card-img-top" alt="Spine Rehabilitation">
+                        <div class="card-body">
+                            <h5 class="card-title">Spine Rehabilitation</h5>
+                            <p class="card-text">Comprehensive treatment for spine-related issues, including back pain, sciatica, and post-surgical rehabilitation, focusing on pain relief and improved mobility.</p>
+                            <a href="#" class="btn btn-link text-primary-custom">Read More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="11111.jpeg" class="card-img-top" alt="Sports & Orthopedic Condition">
+                        <div class="card-body">
+                            <h5 class="card-title">Sports & Orthopedic Condition</h5>
+                            <p class="card-text">Physiotherapy specializing in sports injuries and orthopedic conditions, focusing on recovery, injury prevention, and performance enhancement.</p>
+                            <a href="#" class="btn btn-link text-primary-custom">Read More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="download.jpeg" class="card-img-top" alt="Manual Therapy">
+                        <div class="card-body">
+                            <h5 class="card-title">Manual Therapy</h5>
+                            <p class="card-text">Hands-on techniques to manipulate and mobilize joints and soft tissues, promoting pain relief, flexibility, and improved range of motion.</p>
+                            <a href="#" class="btn btn-link text-primary-custom">Read More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="11111.jpeg" class="card-img-top" alt="Dry Needling">
+                        <div class="card-body">
+                            <h5 class="card-title">Dry Needling</h5>
+                            <p class="card-text">Dry needling is a therapeutic technique used by some physiotherapists to treat myofascial pain and muscular tension.</p>
+                            <a href="#" class="btn btn-link text-primary-custom">Read More <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Machines -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Advanced machines we have</h2>
+            <div class="row text-center">
+                <div class="col-6 col-md-2 mb-4">
+                    <img src="monke.JPG" alt="Shockwave" class="img-fluid rounded-circle mb-3">
+                    <h5>Shockwave</h5>
+                </div>
+                <div class="col-6 col-md-2 mb-4">
+                    <img src="monke.JPG" alt="IFT" class="img-fluid rounded-circle mb-3">
+                    <h5>IFT</h5>
+                </div>
+                <div class="col-6 col-md-2 mb-4">
+                    <img src="monke.JPG" alt="Laser" class="img-fluid rounded-circle mb-3">
+                    <h5>Laser</h5>
+                </div>
+                <div class="col-6 col-md-2 mb-4">
+                    <img src="monke.JPG" alt="Balance Training" class="img-fluid rounded-circle mb-3">
+                    <h5>Balance Training</h5>
+                </div>
+                <div class="col-6 col-md-2 mb-4">
+                    <img src="monke.JPG" alt="Cupping Therapy" class="img-fluid rounded-circle mb-3">
+                    <h5>Cupping Therapy</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Patients Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="  " alt="Shilpa D." class="rounded-circle me-3">
+                                <div>
+                                    <h5 class="card-title mb-0">Shilpa D.</h5>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">Best Physiotherapist in Aurangabad</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://via.placeholder.com/50" alt="Sharvari Thakur" class="rounded-circle me-3">
+                                <div>
+                                    <h5 class="card-title mb-0">Sharvari Thakur</h5>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">Excellent treatment</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://via.placeholder.com/50" alt="Ravi Paropkari" class="rounded-circle me-3">
+                                <div>
+                                    <h5 class="card-title mb-0">Ravi Paropkari</h5>
+                                    <div class="text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">Dr. Rahul Ingole and his team provides excellent physiotherapy treatment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Us?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary-custom">Personalized Treatment Plans</h5>
+                            <p class="card-text">Tailored physiotherapy programs designed to meet your unique needs and goals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary-custom">Comprehensive Services</h5>
+                            <p class="card-text">A wide range of physiotherapy and rehabilitation services under one roof.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary-custom">State-of-the-Art Facilities</h5>
+                            <p class="card-text">Access to advanced equipment and technologies for effective and efficient care.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary-custom">Expert Team</h5>
+                            <p class="card-text">Highly qualified and experienced physiotherapists dedicated to your recovery.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary-custom">Holistic Approach to Healing</h5>
+                            <p class="card-text">We address the root cause of your condition, not just the symptoms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary-custom">Proven Track Record of Success</h5>
+                            <p class="card-text">Thousands of satisfied patients and successful treatment outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-question-circle text-primary-custom me-2"></i> What is physiotherapy?</li>
+                        <li class="mb-2"><i class="fas fa-question-circle text-primary-custom me-2"></i> Why should I need physiotherapy?</li>
+                        <li class="mb-2"><i class="fas fa-question-circle text-primary-custom me-2"></i> Is physiotherapy painful?</li>
+                        <li class="mb-2"><i class="fas fa-question-circle text-primary-custom me-2"></i> What should I expect during my first visit?</li>
+                        <li class="mb-2"><i class="fas fa-question-circle text-primary-custom me-2"></i> How long does physiotherapy treatment last?</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="IMG_9281 - Copy.PNG" alt="FAQ" class="img-fluid rounded h-100 w-50">
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-primary-custom">Contact Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">View Our Gallery</h2>
+            <div class="row">
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="monke.JPG" alt="Gallery 1" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="monke.JPG" alt="Gallery 2" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="monke.JPG" alt="Gallery 3" class="img-fluid rounded">
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <img src="monke.JPG " alt="Gallery 4" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <img src="logo-1.jpg" alt="Ingole's Logo" class="mb-3 w-50">
+                    <p>We are passionate about empowering individuals to achieve optimal health and well-being through our expert physiotherapy services.</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3">Useful Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-dark">Home</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">About Us</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Services</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Gallery</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-dark">Neuro Physiotherapy</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Pediatric Physiotherapy</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Sports & orthopedic</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Manual Therapy</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Spine Rehabilitation</a></li>
+                        <li><a href="#" class="text-decoration-none text-dark">Dry Needling</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3">Contact Details</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-phone text-primary-custom me-2"></i> 9999912345</li>
+                        <li class="mb-2"><i class="fas fa-envelope text-primary-custom me-2"></i> ingolephysiotherapyclinic@gmail.com</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt text-primary-custom me-2"></i> 1, Vijay Nagar, Sane Guruji Marg, Aurangabad, Maharashtra 431005</li>
+                    </ul>
+                    <img src="monke.JPG" alt="Map" class="img-fluid rounded mt-3">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright py-3">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Ingole's Physiotherapy Clinic - All Rights Reserved. Design & Developed by NextGen Media Solutions</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
