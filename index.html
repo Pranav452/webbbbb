@@ -7,9 +7,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
+        
         :root {
             --primary-color: #000000;
             --secondary-color: #f8f9fa;
+            --accent-color: #28a745;
+            --text-color: #333333;
+            --light-bg: #ffffff;
+            --dark-bg: #000000;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
         }
         .bg-primary-custom {
             background-color: var(--primary-color);
@@ -18,41 +28,137 @@
             color: var(--primary-color);
         }
         .btn-primary-custom {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--light-bg);
+            transition: all 0.3s ease;
         }
         .btn-primary-custom:hover {
-            background-color: #000000;
-            border-color: #000000;
+            background-color: #218838;
+            border-color: #1e7e34;
         }
         .btn-outline-primary-custom {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            transition: all 0.3s ease;
         }
         .btn-outline-primary-custom:hover {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--accent-color);
+            color: var(--light-bg);
         }
         .navbar-custom {
-            background-color: white;
+            background-color: var(--light-bg);
             box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            transition: all 0.3s ease;
+        }
+        .navbar-custom.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
         }
         .hero-section {
-            background-color: black;
-            color: white;
-            padding: 4rem 0;
+            background-color: var(--dark-bg);
+            color: var(--light-bg);
+            padding: 6rem 0;
+        }
+        .section-light {
+            background-color: var(--light-bg);
+            padding: 5rem 0;
+        }
+        .section-dark {
+            background-color: var(--secondary-color);
+            padding: 5rem 0;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,.1);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,.15);
         }
         .card-img-top {
             height: 200px;
             object-fit: cover;
         }
         .footer {
-            background-color: var(--secondary-color);
+            background-color: var(--dark-bg);
+            color: var(--light-bg);
+            padding: 4rem 0 2rem;
         }
         .copyright {
             background-color: var(--primary-color);
-            color: white;
+            color: var(--light-bg);
+        }
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20vh);
+            visibility: hidden;
+            transition: opacity 1200ms ease-out, transform 600ms ease-out,
+                        visibility 1200ms ease-out;
+            will-change: opacity, transform, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            color: var(--light-bg);
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+        .back-to-top:hover {
+            background-color: #218838;
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 4rem 0;
+            }
+            .section-light, .section-dark {
+                padding: 3rem 0;
+            }
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -74,7 +180,7 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top transition-all">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="monke.JPG" alt="Ingole's Logo" width="50" height="50" class="d-inline-block align-top">
@@ -86,19 +192,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="#about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
+                        <a class="nav-link" href="#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="#contact">Contact Us</a>
                     </li>
                 </ul>
                 <button class="btn btn-primary-custom ms-3">Book Appointment</button>
@@ -107,7 +213,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section id="home" class="hero-section fade-in-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
@@ -135,14 +241,14 @@
     </section>
 
     <!-- Why Ingole's Section -->
-    <section class="py-5 bg-light">
+    <section id="about" class="section-light fade-in-section">
         <div class="container">
+            <h2 class="text-center section-title">Why Ingole's Physiotherapy Clinic?</h2>
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="monke.JPG" alt="Team" class="img-fluid rounded">
+                    <img src="monke.JPG" alt="Team" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-md-6">
-                    <h2 class="text-primary-custom mb-4">Why Ingole's Physiotherapy Clinic?</h2>
                     <p class="mb-4">At Ingole's Physiotherapy & Rehabilitation Center in the center of Aurangabad and the beautiful valley of the Deccan, we are dedicated to helping you achieve optimal health, function, and well-being through personalized and comprehensive rehabilitation services.</p>
                     <p class="mb-4">Our team of highly skilled physiotherapists at Ingole's Physiotherapy & Rehabilitation Center is here to support you. We are dedicated to being your partner in health and wellness, guiding you towards a life of improved mobility, function, and vitality.</p>
                     <button class="btn btn-outline-primary-custom">Read More</button>
@@ -152,10 +258,10 @@
     </section>
 
     <!-- Working Hours and Appointment -->
-    <section class="py-5">
+    <section class="section-dark fade-in-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-4 mb-4 mb-md-0">
+                <div class="col-md-5 mb-4 mb-md-0">
                     <div class="card text-center h-100">
                         <div class="card-body">
                             <i class="fas fa-clock fa-3x text-primary-custom mb-3"></i>
@@ -165,7 +271,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="card text-center h-100">
                         <div class="card-body">
                             <i class="fas fa-phone fa-3x text-primary-custom mb-3"></i>
@@ -180,7 +286,7 @@
     </section>
 
     <!-- Statistics -->
-    <section class="py-5 bg-primary-custom text-white">
+    <section class="py-5 bg-primary-custom text-white fade-in-section">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-3 mb-4 mb-md-0">
@@ -204,9 +310,9 @@
     </section>
 
     <!-- Areas of Specialized Therapy -->
-    <section class="py-5">
+    <section id="services" class="section-light fade-in-section">
         <div class="container">
-            <h2 class="text-center mb-5">Areas of Specialized Therapy</h2>
+            <h2 class="text-center section-title">Areas of Specialized Therapy</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
@@ -238,63 +344,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="11111.jpeg" class="card-img-top" alt="Sports & Orthopedic Condition">
-                        <div class="card-body">
-                            <h5 class="card-title">Sports & Orthopedic Condition</h5>
-                            <p class="card-text">Physiotherapy specializing in sports injuries and orthopedic conditions, focusing on recovery, injury prevention, and performance enhancement.</p>
-                            <a href="#" class="btn btn-link text-primary-custom">Read More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="download.jpeg" class="card-img-top" alt="Manual Therapy">
-                        <div class="card-body">
-                            <h5 class="card-title">Manual Therapy</h5>
-                            <p class="card-text">Hands-on techniques to manipulate and mobilize joints and soft tissues, promoting pain relief, flexibility, and improved range of motion.</p>
-                            <a href="#" class="btn btn-link text-primary-custom">Read More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="11111.jpeg" class="card-img-top" alt="Dry Needling">
-                        <div class="card-body">
-                            <h5 class="card-title">Dry Needling</h5>
-                            <p class="card-text">Dry needling is a therapeutic technique used by some physiotherapists to treat myofascial pain and muscular tension.</p>
-                            <a href="#" class="btn btn-link text-primary-custom">Read More <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Advanced Machines -->
-    <section class="py-5 bg-light">
+    <section class="section-dark fade-in-section">
         <div class="container">
-            <h2 class="text-center mb-5">Advanced machines we have</h2>
+            <h2 class="text-center section-title">Advanced Machines We Have</h2>
             <div class="row text-center">
                 <div class="col-6 col-md-2 mb-4">
-                    <img src="monke.JPG" alt="Shockwave" class="img-fluid rounded-circle mb-3">
+                    <img src="monke.JPG" alt="Shockwave" class="img-fluid rounded-circle mb-3 shadow">
                     <h5>Shockwave</h5>
                 </div>
                 <div class="col-6 col-md-2 mb-4">
-                    <img src="monke.JPG" alt="IFT" class="img-fluid rounded-circle mb-3">
+                    <img src="monke.JPG" alt="IFT" class="img-fluid rounded-circle mb-3 shadow">
                     <h5>IFT</h5>
                 </div>
                 <div class="col-6 col-md-2 mb-4">
-                    <img src="monke.JPG" alt="Laser" class="img-fluid rounded-circle mb-3">
+                    <img src="monke.JPG" alt="Laser" class="img-fluid rounded-circle mb-3 shadow">
                     <h5>Laser</h5>
                 </div>
                 <div class="col-6 col-md-2 mb-4">
-                    <img src="monke.JPG" alt="Balance Training" class="img-fluid rounded-circle mb-3">
+                    <img src="monke.JPG" alt="Balance Training" class="img-fluid rounded-circle mb-3 shadow">
                     <h5>Balance Training</h5>
                 </div>
                 <div class="col-6 col-md-2 mb-4">
-                    <img src="monke.JPG" alt="Cupping Therapy" class="img-fluid rounded-circle mb-3">
+                    <img src="monke.JPG" alt="Cupping Therapy" class="img-fluid rounded-circle mb-3 shadow">
                     <h5>Cupping Therapy</h5>
                 </div>
             </div>
@@ -302,15 +378,15 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="py-5 bg-light">
+    <section class="section-light fade-in-section">
         <div class="container">
-            <h2 class="text-center mb-5">What Our Patients Say</h2>
+            <h2 class="text-center section-title">What Our Patients Say</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
-                                <img src="  " alt="Shilpa D." class="rounded-circle me-3">
+                                <img src="https://via.placeholder.com/50" alt="Shilpa D." class="rounded-circle me-3">
                                 <div>
                                     <h5 class="card-title mb-0">Shilpa D.</h5>
                                     <div class="text-warning">
@@ -371,9 +447,9 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="py-5">
+    <section class="section-dark fade-in-section">
         <div class="container">
-            <h2 class="text-center mb-5">Why Choose Us?</h2>
+            <h2 class="text-center section-title">Why Choose Us?</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
@@ -399,38 +475,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary-custom">Expert Team</h5>
-                            <p class="card-text">Highly qualified and experienced physiotherapists dedicated to your recovery.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary-custom">Holistic Approach to Healing</h5>
-                            <p class="card-text">We address the root cause of your condition, not just the symptoms.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary-custom">Proven Track Record of Success</h5>
-                            <p class="card-text">Thousands of satisfied patients and successful treatment outcomes.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="py-5 bg-light">
+    <section class="section-light fade-in-section">
         <div class="container">
-            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <h2 class="text-center section-title">Frequently Asked Questions</h2>
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <ul class="list-unstyled">
@@ -442,7 +494,7 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <img src="IMG_9281 - Copy.PNG" alt="FAQ" class="img-fluid rounded h-100 w-50">
+                    <img src="IMG_9281 - Copy.PNG" alt="FAQ" class="img-fluid rounded shadow">
                 </div>
             </div>
             <div class="text-center mt-4">
@@ -452,28 +504,58 @@
     </section>
 
     <!-- Gallery -->
-    <section class="py-5">
+    <section id="gallery" class="section-dark fade-in-section">
         <div class="container">
-            <h2 class="text-center mb-5">View Our Gallery</h2>
-            <div class="row">
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="monke.JPG" alt="Gallery 1" class="img-fluid rounded">
+            <h2 class="text-center section-title">View Our Gallery</h2>
+            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-6 col-md-3 mb-4">
+                                <img src="monke.JPG" alt="Gallery 1" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="col-6 col-md-3 mb-4">
+                                <img src="monke.JPG" alt="Gallery 2" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="col-6 col-md-3 mb-4">
+                                <img src="monke.JPG" alt="Gallery 3" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="col-6 col-md-3 mb-4">
+                                <img src="monke.JPG" alt="Gallery 4" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-6 col-md-3 mb-4">
+                                <img src="monke.JPG" alt="Gallery 5" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="col-6 col-md-3 mb-4">
+                                <img src="monke.JPG" alt="Gallery 6" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="col-6 col-md-3 mb-4">
+                                <img src="monke.JPG" alt="Gallery 7" class="img-fluid rounded shadow">
+                            </div>
+                            <div class="col-6 col-md-3 mb-4">
+                                <img src="monke.JPG" alt="Gallery 8" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="monke.JPG" alt="Gallery 2" class="img-fluid rounded">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="monke.JPG" alt="Gallery 3" class="img-fluid rounded">
-                </div>
-                <div class="col-6 col-md-3 mb-4">
-                    <img src="monke.JPG " alt="Gallery 4" class="img-fluid rounded">
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer py-5">
+    <footer id="contact" class="footer fade-in-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-4 mb-md-0">
@@ -483,22 +565,22 @@
                 <div class="col-md-3 mb-4 mb-md-0">
                     <h5 class="mb-3">Useful Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-decoration-none text-dark">Home</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">About Us</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Services</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Gallery</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Contact Us</a></li>
+                        <li><a href="#home" class="text-decoration-none text-light">Home</a></li>
+                        <li><a href="#about" class="text-decoration-none text-light">About Us</a></li>
+                        <li><a href="#services" class="text-decoration-none text-light">Services</a></li>
+                        <li><a href="#gallery" class="text-decoration-none text-light">Gallery</a></li>
+                        <li><a href="#contact" class="text-decoration-none text-light">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4 mb-md-0">
                     <h5 class="mb-3">Our Services</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-decoration-none text-dark">Neuro Physiotherapy</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Pediatric Physiotherapy</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Sports & orthopedic</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Manual Therapy</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Spine Rehabilitation</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Dry Needling</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Neuro Physiotherapy</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Pediatric Physiotherapy</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Sports & orthopedic</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Manual Therapy</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Spine Rehabilitation</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Dry Needling</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -508,7 +590,7 @@
                         <li class="mb-2"><i class="fas fa-envelope text-primary-custom me-2"></i> ingolephysiotherapyclinic@gmail.com</li>
                         <li class="mb-2"><i class="fas fa-map-marker-alt text-primary-custom me-2"></i> 1, Vijay Nagar, Sane Guruji Marg, Aurangabad, Maharashtra 431005</li>
                     </ul>
-                    <img src="monke.JPG" alt="Map" class="img-fluid rounded mt-3">
+                    <img src="monke.JPG" alt="Map" class="img-fluid rounded mt-3 shadow">
                 </div>
             </div>
         </div>
@@ -520,6 +602,96 @@
         </div>
     </div>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Change navbar background on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar-custom').classList.add('scrolled');
+            } else {
+                document.querySelector('.navbar-custom').classList.remove('scrolled');
+            }
+        });
+
+        // Fade-in sections on scroll
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+        const fadeInOptions = {
+            threshold: 0.1
+        };
+
+        const fadeInObserver = new IntersectionObserver(function(entries, fadeInObserver) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('is-visible');
+                    fadeInObserver.unobserve(entry.target);
+                }
+            });
+        }, fadeInOptions);
+
+        fadeInSections.forEach(section => {
+            fadeInObserver.observe(section);
+        });
+
+        // Back to Top button functionality
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", scrollFunction);
+
+        function scrollFunction() {
+            if (window.pageYOffset > 300) {
+                if(!backToTopButton.classList.contains("show")) {
+                    backToTopButton.classList.add("show");
+                }
+            } else {
+                if(backToTopButton.classList.contains("show")) {
+                    backToTopButton.classList.remove("show");
+                }
+            }
+        }
+
+        backToTopButton.addEventListener("click", smoothScrollBackToTop);
+
+        function smoothScrollBackToTop() {
+            const targetPosition = 0;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 750;
+            let start = null;
+            
+            window.requestAnimationFrame(step);
+
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+                if (progress < duration) window.requestAnimationFrame(step);
+            }
+        }
+
+        function easeInOutCubic(t, b, c, d) {
+            t /= d/2;
+            if (t < 1) return c/2*t*t*t + b;
+            t -= 2;
+            return c/2*(t*t*t + 2) + b;
+        };
+    </script>
 </body>
 </html>
